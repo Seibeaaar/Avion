@@ -1,0 +1,31 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+@use "../../styles/presets";
+
+.header {
+  background-color: colors.$white;
+  @include mixins.row;
+  padding: 20px 28px;
+
+  .header-appName {
+    @include mixins.text(24pt);
+    font-weight: 400;
+  }
+
+  .header-icon {
+    @extend %touchableIcon;
+    width: 16px;
+    height: 16px;
+    fill: colors.$dark;
+    transition: all 0.25s ease-out;
+    &:hover {
+      fill: colors.$primary;
+      transform: scale(1.5);
+    }
+  }
+
+  .header-actions {
+    @include mixins.row(start);
+    gap: 16px;
+  }
+}
