@@ -15,6 +15,9 @@
     @include mixins.text(16pt, colors.$borderDark);
     text-decoration: none;
     position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     transition: all 0.25s ease-out;
     &::after {
       content: " ";
@@ -34,6 +37,21 @@
     }
     &:hover {
       color: colors.$primary;
+    }
+  }
+  .navbar-item--active {
+    color: colors.$primary;
+    &::after {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(1);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+      background-color: colors.$primary;
     }
   }
 }

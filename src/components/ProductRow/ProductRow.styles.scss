@@ -1,0 +1,30 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.product-row {
+  @include mixins.row(start);
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100%;
+  .product-item {
+    flex-basis: calc(25% - 15px);
+    padding: 24px;
+    .product-item--image {
+      height: 275px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .product-item--text {
+      @include mixins.text(20px);
+      font-weight: 300;
+    }
+    .product-item--price {
+      @include mixins.text(16px);
+      margin-top: 8px;
+    }
+  }
+  .product-item--container {
+    background-color: colors.$lightGrey;
+  }
+}
