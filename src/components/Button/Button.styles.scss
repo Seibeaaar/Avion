@@ -1,0 +1,37 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.button {
+  padding: 14px 32px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  min-width: 170px;
+}
+
+.button-container--default {
+  background-color: colors.$lightGrey;
+}
+.button-container--primary {
+  background-color: colors.$primary;
+  &:hover {
+    background-color: colors.$dark;
+  }
+}
+.button-container--white {
+  background-color: colors.$white;
+  &:hover {
+    background-color: colors.$borderGrey;
+  }
+}
+.button-text {
+  font-weight: 300;
+}
+.button-text--default,
+.button-text--white {
+  @include mixins.text(16px);
+}
+.button-text--primary {
+  @include mixins.text(16px, colors.$white);
+}

@@ -14,7 +14,7 @@ const FeaturedProduct: React.FC<IFeaturedProductprops> = ({
   loading,
 }) => {
   return (
-    <article className="featured">
+    <section className="featured">
       {loading || !featured ? (
         <div id="featured-loader">
           <Skeleton.Button className="featured-image--loader" block active />
@@ -37,7 +37,7 @@ const FeaturedProduct: React.FC<IFeaturedProductprops> = ({
           </div>
         </div>
       )}
-    </article>
+    </section>
   );
 };
 

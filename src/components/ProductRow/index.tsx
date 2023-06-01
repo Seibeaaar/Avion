@@ -3,6 +3,7 @@ import { Product } from "src/types/products";
 import { Skeleton } from "antd";
 import "./ProductRow.styles.scss";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import Button from "../Button";
 
 interface IProductItemProps {
   products: Product[];
@@ -30,15 +31,20 @@ const ProductRow: React.FC<IProductItemProps> = ({ products, loading }) => {
             className="product-item product-item--container"
             key={product.id}
           >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="product-item--image"
-            />
-            <h4 className="product-item--text">{product.title}</h4>
-            <p className="product-item--text product-item--price">
-              ${product.price}
-            </p>
+            <div className="product-item--content">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="product-item--image"
+              />
+              <h4 className="product-item--text">{product.title}</h4>
+              <p className="product-item--text product-item--price">
+                ${product.price}
+              </p>
+            </div>
+            <div className="product-item--view">
+              <Button variant="white" text="View product" />
+            </div>
           </div>
         ))}
       </section>

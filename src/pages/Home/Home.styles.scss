@@ -2,7 +2,9 @@
 @use "../../styles/mixins";
 
 .home {
-  padding: 0 80px;
+  .home-content {
+    padding: 0 80px;
+  }
   .home-title {
     margin: 80px 0 24px 0;
     @include mixins.text(24px);

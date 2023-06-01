@@ -4,6 +4,7 @@ import Qualities from "src/components/Qualities";
 import "./Home.styles.scss";
 import ProductRow from "src/components/ProductRow";
 import FeaturedProduct from "./components/Featured";
+import JoinSubscription from "src/components/JoinSubscription";
 import { State } from "src/types/state";
 
 const HomePage = () => {
@@ -14,12 +15,13 @@ const HomePage = () => {
 
   return (
     <main className="home">
-      <section>
+      <div className="home-content">
         <FeaturedProduct loading={loading} featured={featured} />
-      </section>
-      <h2 className="home-title">More items from category</h2>
-      <ProductRow loading={loading} products={otherProducts} />
-      <Qualities />
+        <h2 className="home-title">More items from category</h2>
+        <ProductRow loading={loading} products={otherProducts} />
+        <Qualities />
+      </div>
+      <JoinSubscription />
     </main>
   );
 };

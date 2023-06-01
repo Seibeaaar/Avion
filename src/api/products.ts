@@ -1,6 +1,5 @@
 import instance from ".";
 import { ProductCategory } from "src/types/products";
-import categories from "src/constants/categories";
 
 const getAllProducts = async () => {
   const { data } = await instance.get("/products");

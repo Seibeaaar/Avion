@@ -10,6 +10,8 @@
   .product-item {
     flex-basis: calc(25% - 15px);
     padding: 24px;
+    display: flex;
+    flex-direction: column;
     .product-item--image {
       height: 275px;
       width: 100%;
@@ -26,5 +28,11 @@
   }
   .product-item--container {
     background-color: colors.$lightGrey;
+  }
+  .product-item--view {
+    margin-top: 48px;
+  }
+  .product-item--content {
+    flex-grow: 1;
   }
 }
