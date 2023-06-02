@@ -8,7 +8,11 @@ import Input from "../Input";
 
 const JoinSubscription = () => (
   <section className="subscription">
-    <AnimationOnScroll animateOnce animateIn="animate__fadeInDown">
+    <AnimationOnScroll
+      animatePreScroll={false}
+      animateOnce
+      animateIn="animate__fadeInDown"
+    >
       <h3 className="subscription-title">Join the club and get the benefits</h3>
       <p className="subscription-info">
         Sign up for our newsletter and receive exclusive offers on new ranges,

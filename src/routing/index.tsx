@@ -4,6 +4,7 @@ import Footer from "src/components/Footer";
 import Header from "src/components/Header";
 import ErrorPage from "src/pages/ErrorPage";
 import HomePage from "src/pages/Home";
+import ProductPage from "src/pages/Product";
 
 const Layout = () => (
   <>
@@ -17,11 +18,14 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     errorElement: <ErrorPage />,
-    path: "/",
     children: [
       {
         element: <HomePage />,
         path: "/",
+      },
+      {
+        element: <ProductPage />,
+        path: "/product/:name/:id",
       },
     ],
   },

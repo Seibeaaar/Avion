@@ -1,18 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Product, ProductsSlice } from "src/types/products";
-import { getSingleProduct, getProductsByCategory } from "../thunks/products";
+import { getProductsByCategory } from "../thunks/products";
 
 const initialState: ProductsSlice = {
   products: [],
-  singleProduct: null,
   error: null,
   loading: false,
+  cart: [],
 };
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state, action) => {
+      state.cart.push(action.payload);
+    },
+    removeFromCart: (state, action) => {
+      state.cart = state.cart.filter((c) => c.product !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProductsByCategory.fulfilled, (state, action) => {
       state.products = action.payload as Product[];
@@ -24,17 +31,9 @@ const productsSlice = createSlice({
     builder.addCase(getProductsByCategory.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(getSingleProduct.fulfilled, (state, action) => {
-      state.singleProduct = action.payload as Product;
-      state.loading = false;
-    });
-    builder.addCase(getSingleProduct.rejected, (state, action) => {
-      state.error = action.payload as string;
-    });
-    builder.addCase(getSingleProduct.pending, (state) => {
-      state.loading = true;
-    });
   },
 });
+
+export const { addToCart, removeFromCart } = productsSlice.actions;
 
 export default productsSlice.reducer;

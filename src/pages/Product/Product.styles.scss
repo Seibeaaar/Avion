@@ -1,0 +1,53 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.product {
+  @include mixins.row;
+  align-items: stretch;
+  margin: 48px 0;
+  .product-info {
+    padding: 0 60px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .product-info--title {
+      @include mixins.text(36px);
+      font-weight: 400;
+    }
+    .product-info--price {
+      @include mixins.text(24px);
+      font-weight: 300;
+      margin: 12px 0 48px 0;
+    }
+    .product-info--text {
+      @include mixins.text(16px);
+      font-weight: 300;
+    }
+    .product-info--caption {
+      margin-bottom: 16px;
+      @include mixins.text(20px);
+    }
+    .product-info--controls {
+      @include mixins.row;
+      margin-top: 34px;
+      .controls-amount {
+        @include mixins.row;
+        gap: 22px;
+        .controls-amount--quantity {
+          @include mixins.row;
+          padding: 12px 16px;
+          background-color: colors.$lightGrey;
+          min-width: 120px;
+        }
+        .controls-amount--sign {
+          color: colors.$borderDark;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .product-image {
+    flex-grow: 1;
+  }
+}

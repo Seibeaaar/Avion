@@ -15,7 +15,10 @@ export interface Product {
 
 export interface ProductsSlice {
   products: Product[];
-  singleProduct: Product | null;
   error: string | null;
   loading: boolean;
+  cart: {
+    product: string;
+    quantity: number;
+  }[];
 }

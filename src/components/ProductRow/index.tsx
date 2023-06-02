@@ -4,6 +4,7 @@ import { Skeleton } from "antd";
 import "./ProductRow.styles.scss";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 interface IProductItemProps {
   products: Product[];
@@ -11,6 +12,7 @@ interface IProductItemProps {
 }
 
 const ProductRow: React.FC<IProductItemProps> = ({ products, loading }) => {
+  const navigate = useNavigate();
   if (loading) {
     return (
       <section className="product-row">
@@ -25,9 +27,9 @@ const ProductRow: React.FC<IProductItemProps> = ({ products, loading }) => {
   }
   return (
     <AnimationOnScroll
-      initiallyVisible
       animateOnce
       animateIn="animate__fadeInLeft"
+      animatePreScroll={false}
     >
       <section className="product-row">
         {products.map((product) => (
@@ -47,7 +49,13 @@ const ProductRow: React.FC<IProductItemProps> = ({ products, loading }) => {
               </p>
             </div>
             <div className="product-item--view">
-              <Button variant="white" text="View product" />
+              <Button
+                onClick={() =>
+                  navigate(`/product/${product.title}/${product.id}`)
+                }
+                variant="white"
+                text="View product"
+              />
             </div>
           </div>
         ))}
