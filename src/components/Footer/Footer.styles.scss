@@ -1,0 +1,71 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.footer {
+  background-color: colors.$dark;
+  padding: 0 80px;
+  .footer-content {
+    @include mixins.row;
+    align-items: flex-start;
+    padding: 50px 0 64px 0;
+    .content-info {
+      @include mixins.row(start);
+      align-items: start;
+      gap: 64px;
+      .content-info--logo {
+        @include mixins.text(36px, colors.$white);
+        margin-bottom: 16px;
+        font-weight: 400;
+      }
+      .content-info--address {
+        @include mixins.text(14px, colors.$white);
+        margin-bottom: 12px;
+        font-weight: 300;
+      }
+    }
+
+    .content-social {
+      .content-social--title {
+        @include mixins.text(16px, colors.$white);
+        font-weight: 300;
+      }
+      .content-social--row {
+        margin-top: 22px;
+        @include mixins.row;
+      }
+      .content-social--icon {
+        color: colors.$white;
+        font-size: 24px;
+        transition: all ease 0.25s;
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+  .content-links {
+    @include mixins.row;
+    align-items: start;
+    gap: 110px;
+    .content-links--title {
+      @include mixins.text(16px, colors.$white);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .content-links--item {
+      text-decoration: none;
+    }
+    .content-links--text {
+      @include mixins.text(14px, colors.$white);
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+  }
+  .footer-copyright {
+    border-top: 1px solid colors.$primary;
+    padding: 18px 0;
+    .footer-copyright--text {
+      @include mixins.text(14px, colors.$white);
+    }
+  }
+}

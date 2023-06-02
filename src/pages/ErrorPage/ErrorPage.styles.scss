@@ -1,0 +1,22 @@
+@use "../../styles/mixins";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .error-image {
+    width: 25%;
+    height: 25%;
+  }
+  .error-title {
+    margin-top: 48px;
+    @include mixins.text(48px);
+    text-align: center;
+  }
+  .error-description {
+    @include mixins.text(24px);
+    text-align: center;
+    font-weight: 300;
+  }
+}

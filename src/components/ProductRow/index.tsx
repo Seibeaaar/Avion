@@ -24,7 +24,11 @@ const ProductRow: React.FC<IProductItemProps> = ({ products, loading }) => {
     );
   }
   return (
-    <AnimationOnScroll animateOnce animateIn="animate__fadeInLeft">
+    <AnimationOnScroll
+      initiallyVisible
+      animateOnce
+      animateIn="animate__fadeInLeft"
+    >
       <section className="product-row">
         {products.map((product) => (
           <div
