@@ -6,9 +6,13 @@ import { ReactComponent as AvatarIcon } from "src/assets/icons/Avatar.svg";
 import Navbar from "../Navbar";
 import { useSelector } from "react-redux";
 import { State } from "src/types/state";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { cart } = useSelector((state: State) => state.products);
+  const navigate = useNavigate();
+
+  const goToCart = () => navigate("/cart");
   return (
     <header>
       <div className="header">
@@ -17,7 +21,7 @@ const Header = () => {
         </div>
         <h1 className="header-appName">Avion</h1>
         <div className="header-actions">
-          <div className="header-icon">
+          <div className="header-icon" onClick={goToCart}>
             <CartIcon className="header-icon--svg" />
             {cart.length ? (
               <div className="header-icon--badge">{cart.length}</div>

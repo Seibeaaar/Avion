@@ -19,7 +19,6 @@
     }
     .product-item--text {
       @include mixins.text(20px);
-      font-weight: 300;
     }
     .product-item--price {
       @include mixins.text(16px);

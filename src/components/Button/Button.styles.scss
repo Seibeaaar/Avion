@@ -25,13 +25,19 @@
     background-color: colors.$borderGrey;
   }
 }
-.button-text {
-  font-weight: 300;
+
+.button-container--danger {
+  background-color: colors.$red;
+  &:hover {
+    background-color: colors.$blurredRed;
+  }
 }
+
 .button-text--default,
 .button-text--white {
   @include mixins.text(16px);
 }
-.button-text--primary {
+.button-text--primary,
+.button-text--danger {
   @include mixins.text(16px, colors.$white);
 }

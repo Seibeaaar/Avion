@@ -17,7 +17,6 @@
   }
   .subscription-info {
     @include mixins.text(18px, colors.$white);
-    font-weight: 300;
   }
   .subscription-benefits {
     @include mixins.row;
@@ -28,7 +27,6 @@
       gap: 8px;
     }
     .subscription-benefits--text {
-      font-weight: 300;
       @include mixins.text(16px, colors.$white);
     }
   }

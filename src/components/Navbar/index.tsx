@@ -5,18 +5,23 @@ import "./Navbar.styles.scss";
 import categories from "src/constants/categories";
 import { getProductsByCategory } from "src/redux/thunks/products";
 import { ProductCategory } from "src/types/products";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [activeCtaegory, setActiveCategory] =
     useState<ProductCategory>("electronics");
   const dispatch = useDispatch<AppDispatch>();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getProductsByCategory(activeCtaegory as ProductCategory));
   }, [activeCtaegory]);
 
-  const changeCategory = (category: ProductCategory) =>
+  const changeCategory = (category: ProductCategory) => {
     setActiveCategory(category);
+    if (pathname !== "/") navigate("/");
+  };
 
   return (
     <nav className="navbar">

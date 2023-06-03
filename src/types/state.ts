@@ -4,7 +4,7 @@ export interface State {
   products: {
     products: Product[];
     cart: {
-      product: string;
+      product: Product;
       quantity: number;
     }[];
     error: string | null;

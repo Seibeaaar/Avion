@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.styles.scss";
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "primary" | "white";
+  variant?: "default" | "primary" | "white" | "danger";
   text: string;
 }
 
@@ -16,20 +16,24 @@ const Button: React.FC<IButtonProps> = (props) => {
         break;
       case "white":
         custom = "button-container--white";
+        break;
+      case "danger":
+        custom = "button-container--danger";
+        break;
     }
     return ["button", custom].join(" ");
   };
   const composeButtonTextClasses = () => {
-    let custom = "button-text--default";
     switch (variant) {
       case "primary":
-        custom = "button-text--primary";
-        break;
+        return "button-text--primary";
       case "white":
-        custom = "button-text--white";
-        break;
+        return "button-text--white";
+      case "danger":
+        return "button-text--danger";
+      default:
+        return "button-text--default";
     }
-    return ["button-text", custom].join(" ");
   };
   return (
     <button className={composeButtonClasses()} {...props}>

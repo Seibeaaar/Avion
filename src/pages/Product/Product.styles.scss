@@ -17,12 +17,10 @@
     }
     .product-info--price {
       @include mixins.text(24px);
-      font-weight: 300;
       margin: 12px 0 48px 0;
     }
     .product-info--text {
       @include mixins.text(16px);
-      font-weight: 300;
     }
     .product-info--caption {
       margin-bottom: 16px;

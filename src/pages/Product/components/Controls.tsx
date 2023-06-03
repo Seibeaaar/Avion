@@ -4,14 +4,15 @@ import Button from "src/components/Button";
 import { State } from "src/types/state";
 import { addToCart, removeFromCart } from "src/redux/slices/products";
 import "../Product.styles.scss";
+import { Product } from "src/types/products";
 
 interface IControlsProps {
-  product: string;
+  product: Product;
 }
 
 const ProductControls: React.FC<IControlsProps> = ({ product }) => {
   const cartItem = useSelector((state: State) =>
-    state.products.cart.find((c) => c.product === product)
+    state.products.cart.find((c) => c.product.id === product.id)
   );
   const [amount, setAmount] = useState<number>(
     cartItem ? cartItem.quantity : 1

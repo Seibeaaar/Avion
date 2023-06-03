@@ -20,14 +20,12 @@
       .content-info--address {
         @include mixins.text(14px, colors.$white);
         margin-bottom: 12px;
-        font-weight: 300;
       }
     }
 
     .content-social {
       .content-social--title {
         @include mixins.text(16px, colors.$white);
-        font-weight: 300;
       }
       .content-social--row {
         margin-top: 22px;
@@ -49,7 +47,6 @@
     gap: 110px;
     .content-links--title {
       @include mixins.text(16px, colors.$white);
-      font-weight: 300;
       margin-bottom: 16px;
     }
     .content-links--item {
@@ -58,7 +55,6 @@
     .content-links--text {
       @include mixins.text(14px, colors.$white);
       margin-bottom: 12px;
-      font-weight: 300;
     }
   }
   .footer-copyright {

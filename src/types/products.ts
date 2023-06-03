@@ -11,6 +11,10 @@ export interface Product {
   category: ProductCategory;
   description: string;
   image: string;
+  rating: {
+    count: number;
+    rate: number;
+  };
 }
 
 export interface ProductsSlice {
@@ -18,7 +22,7 @@ export interface ProductsSlice {
   error: string | null;
   loading: boolean;
   cart: {
-    product: string;
+    product: Product;
     quantity: number;
   }[];
 }
