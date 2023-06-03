@@ -23,21 +23,9 @@ const Button: React.FC<IButtonProps> = (props) => {
     }
     return ["button", custom].join(" ");
   };
-  const composeButtonTextClasses = () => {
-    switch (variant) {
-      case "primary":
-        return "button-text--primary";
-      case "white":
-        return "button-text--white";
-      case "danger":
-        return "button-text--danger";
-      default:
-        return "button-text--default";
-    }
-  };
   return (
     <button className={composeButtonClasses()} {...props}>
-      <p className={composeButtonTextClasses()}>{props.text}</p>
+      <p>{props.text}</p>
     </button>
   );
 };

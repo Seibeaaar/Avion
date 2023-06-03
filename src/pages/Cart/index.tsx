@@ -34,24 +34,20 @@ const CartPage = () => {
             <>
               <div key={ci.product.id} className="row">
                 <div className="cart-product">
-                  <div>
-                    <img
-                      src={ci.product.image}
-                      alt={ci.product.title}
-                      className="cart-product--image"
-                    />
-                    <div className="cart-product--info">
-                      <h3 className="product-info--title">
-                        {ci.product.title}
-                      </h3>
-                      <p
-                        className="product-info--description"
-                        title={ci.product.description}
-                      >
-                        {minifyText(ci.product.description, 100)}
-                      </p>
-                      <p className="product-info--price">${ci.product.price}</p>
-                    </div>
+                  <img
+                    src={ci.product.image}
+                    alt={ci.product.title}
+                    className="cart-product--image"
+                  />
+                  <div className="cart-product--info">
+                    <h3 className="product-info--title">{ci.product.title}</h3>
+                    <p
+                      className="product-info--description"
+                      title={ci.product.description}
+                    >
+                      {minifyText(ci.product.description, 100)}
+                    </p>
+                    <p className="product-info--price">${ci.product.price}</p>
                   </div>
                 </div>
                 <div className="cart-quantity">
