@@ -18,7 +18,6 @@ const Layout = () => (
 const router = createBrowserRouter([
   {
     element: <Layout />,
-    errorElement: <ErrorPage />,
     children: [
       {
         element: <HomePage />,
@@ -31,6 +30,10 @@ const router = createBrowserRouter([
       {
         element: <CartPage />,
         path: "/cart",
+      },
+      {
+        element: <ErrorPage />,
+        path: "*",
       },
     ],
   },
