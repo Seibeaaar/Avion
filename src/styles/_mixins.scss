@@ -1,0 +1,15 @@
+@use "sass:math";
+@use "colors";
+
+@mixin text($size: 14pt, $color: colors.$dark) {
+  font-size: $size;
+  line-height: $size * 1.5;
+  color: $color;
+  font-weight: 300;
+}
+
+@mixin row($justify: space-between) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}

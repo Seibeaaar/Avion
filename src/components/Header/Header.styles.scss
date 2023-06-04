@@ -1,0 +1,55 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+@use "../../styles/presets";
+
+.header {
+  background-color: colors.$white;
+  @include mixins.row;
+  padding: calc(24pt * 1.2) 28px;
+  position: relative;
+  .header-appName {
+    @include mixins.text(24pt);
+    font-weight: 400;
+    position: absolute;
+    top: calc(12pt * 1.2);
+    width: 100%;
+    margin-left: -28px;
+    text-align: center;
+  }
+
+  .header-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .header-icon--svg {
+      @extend %touchableIcon;
+      width: 16px;
+      height: 16px;
+      fill: colors.$dark;
+      transition: all 0.25s ease-out;
+      &:hover {
+        fill: colors.$primary;
+        transform: scale(1.5);
+      }
+    }
+    .header-icon--badge {
+      position: absolute;
+      bottom: 0;
+      right: -4px;
+      width: 12px;
+      height: 12px;
+      @include mixins.text(6px, colors.$white);
+      background-color: red;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .header-actions {
+    @include mixins.row(start);
+    gap: 16px;
+  }
+}

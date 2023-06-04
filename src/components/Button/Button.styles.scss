@@ -1,0 +1,44 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.button {
+  padding: 12px 32px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  min-width: 170px;
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+}
+
+.button-container--default {
+  background-color: colors.$lightGrey;
+  @include mixins.text(16px);
+}
+.button-container--primary {
+  background-color: colors.$primary;
+  @include mixins.text(16px, colors.$white);
+  &:hover {
+    background-color: colors.$dark;
+  }
+}
+.button-container--white {
+  background-color: colors.$white;
+  @include mixins.text(16px);
+  &:hover {
+    background-color: colors.$borderGrey;
+  }
+}
+
+.button-container--danger {
+  background-color: transparent;
+  border: 2px solid colors.$red;
+  @include mixins.text(16px, colors.$red);
+  &:hover {
+    background-color: colors.$red;
+    border-color: transparent;
+    color: colors.$white;
+  }
+}

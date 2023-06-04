@@ -1,0 +1,22 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.label {
+  @include mixins.text(16px);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.input {
+  padding: 14px 28px;
+  border: none;
+  outline: none;
+  background-color: colors.$lightGrey;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  &::placeholder {
+    @include mixins.text(16px);
+    opacity: 0.25;
+  }
+}

@@ -1,0 +1,100 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.cart {
+  width: 66%;
+  margin: auto;
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    padding: 0 24pt;
+  }
+  .cart-title {
+    @include mixins.text(36px);
+    margin: 48px 0;
+  }
+  .row {
+    @include mixins.row;
+  }
+  .cart-content {
+    width: 100%;
+    padding-bottom: 32px;
+    border-bottom: 1px solid colors.$borderGrey;
+    .cart-content--caption {
+      @include mixins.text(14px);
+    }
+    .cart-content--header {
+      border-bottom: 1px solid colors.$borderGrey;
+      padding: 12px 0;
+    }
+  }
+
+  .cart-product {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    @media screen and (max-width: 992px) {
+      flex-basis: 100%;
+    }
+    .cart-product--image {
+      width: 110px;
+      height: 130px;
+    }
+    .cart-product--info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .product-info--title {
+        @include mixins.text(20px);
+      }
+      .product-info--description {
+        @include mixins.text(14px);
+        margin: 8px 0;
+      }
+      .product-info--price {
+        @include mixins.text(16px);
+      }
+    }
+  }
+
+  .cart-quantity {
+    width: 25%;
+    text-align: center;
+    .cart-quantity--number {
+      @include mixins.text(16px);
+    }
+  }
+  .cart-total {
+    width: 25%;
+    text-align: end;
+    .cart-total--price {
+      @include mixins.text(18px);
+    }
+  }
+  .cart-empty {
+    margin-top: 48px;
+  }
+
+  .cart-checkout {
+    padding: 28px 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .cart-checkout--subtotal {
+      @include mixins.text(20px);
+      margin-right: 16px;
+    }
+    .cart-checkout--price {
+      @include mixins.text(24px);
+    }
+    .cart-checkout--info {
+      @include mixins.text(18px);
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+  }
+  .cart-remove {
+    margin: 24px 0;
+  }
+}

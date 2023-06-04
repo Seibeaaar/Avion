@@ -1,0 +1,44 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+
+.product-row {
+  @include mixins.row(start);
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100%;
+  .product-item {
+    flex-basis: calc(25% - 15px);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 1400px) {
+      flex-basis: calc(50% - 15px);
+    }
+    @media screen and (max-width: 576px) {
+      flex-basis: 100%;
+      gap: 20px;
+    }
+    .product-item--image {
+      min-height: 275px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .product-item--text {
+      @include mixins.text(20px);
+    }
+    .product-item--price {
+      @include mixins.text(16px);
+      margin-top: 8px;
+    }
+  }
+  .product-item--container {
+    background-color: colors.$lightGrey;
+  }
+  .product-item--view {
+    margin-top: 48px;
+  }
+  .product-item--content {
+    flex-grow: 1;
+  }
+}

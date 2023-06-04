@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Provider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
+import store from "./redux/store";
+import router from "./routing";
+import "animate.css/animate.min.css";
 
 function App() {
   return (
-    <h1>Hello</h1>
-  )
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
 
 export default App;

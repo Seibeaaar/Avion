@@ -1,0 +1,38 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.qualities {
+  padding: 80px 0 60px;
+  .qualities-title {
+    @include mixins.text(24px);
+    text-align: center;
+    font-weight: 400;
+  }
+  .qualities-container {
+    @include mixins.row;
+    gap: 20px;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .qualities-item {
+    width: calc(25% - 15px);
+    background-color: colors.$lightGrey;
+    margin-top: 36px;
+    padding: 48px;
+    justify-content: center;
+    @media screen and (min-width: 576px) and (max-width: 1400px) {
+      flex-basis: calc(50% - 15px);
+      margin-top: 15px;
+    }
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
+    .qualities-item--title {
+      margin: 12px 0;
+      @include mixins.text(20px);
+    }
+    .qualities-item--description {
+      @include mixins.text(16px);
+    }
+  }
+}
