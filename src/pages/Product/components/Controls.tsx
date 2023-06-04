@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { notification } from "antd";
 import Button from "src/components/Button";
 import { State } from "src/types/state";
 import { addToCart, removeFromCart } from "src/redux/slices/products";
@@ -18,6 +19,7 @@ const ProductControls: React.FC<IControlsProps> = ({ product }) => {
     cartItem ? cartItem.quantity : 1
   );
   const dispatch = useDispatch();
+  const [notify, contextHolder] = notification.useNotification();
 
   const changeAmount = (action: "plus" | "minus") => {
     setAmount((value) => {
@@ -30,7 +32,7 @@ const ProductControls: React.FC<IControlsProps> = ({ product }) => {
 
   const handleAction = () => {
     if (cartItem) {
-      dispatch(removeFromCart(product));
+      dispatch(removeFromCart(product.id));
       setAmount(1);
     } else {
       dispatch(
@@ -40,10 +42,16 @@ const ProductControls: React.FC<IControlsProps> = ({ product }) => {
         })
       );
     }
+    notify.success({
+      message: cartItem
+        ? "Item is removed from your cart"
+        : "Successfully added to the cart",
+    });
   };
 
   return (
     <div className="product-info--controls">
+      {contextHolder}
       <div className="controls-amount">
         <p className="product-info--text">Amount:</p>
         <div className="controls-amount--quantity">

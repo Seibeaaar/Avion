@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "src/redux/slices/products";
-import { Empty } from "antd";
+import { Empty, notification } from "antd";
 import { State } from "src/types/state";
 import { minifyText, calculateTotal } from "src/utils/product";
 import "./Cart.styles.scss";
@@ -10,6 +10,7 @@ import Button from "src/components/Button";
 const CartPage = () => {
   const { cart } = useSelector((state: State) => state.products);
   const dispatch = useDispatch();
+  const [notify, contextHolder] = notification.useNotification();
 
   const isEmptyCart = !cart.length;
 
@@ -18,10 +19,16 @@ const CartPage = () => {
     0
   );
 
-  const removeItem = (id: string) => dispatch(removeFromCart(id));
+  const removeItem = (id: string) => {
+    dispatch(removeFromCart(id));
+    notify.success({
+      message: "Item removed successfully",
+    });
+  };
 
   return (
     <main className="cart">
+      {contextHolder}
       <h1 className="cart-title">Your shopping cart</h1>
       <section className="cart-content">
         <div className="row cart-content--header">
