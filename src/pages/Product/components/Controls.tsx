@@ -64,7 +64,7 @@ const ProductControls: React.FC<IControlsProps> = ({ product }) => {
           <p className="controls-amount--text">{amount}</p>
           <p
             onClick={() => changeAmount("plus")}
-            className="controls-amount--text controls-amount--sign"
+            className="controls-amount--text controls-amount--sign controls-amount--plus"
           >
             +
           </p>

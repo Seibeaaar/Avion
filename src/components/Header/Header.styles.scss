@@ -5,11 +5,16 @@
 .header {
   background-color: colors.$white;
   @include mixins.row;
-  padding: 20px 28px;
-
+  padding: calc(24pt * 1.2) 28px;
+  position: relative;
   .header-appName {
     @include mixins.text(24pt);
     font-weight: 400;
+    position: absolute;
+    top: calc(12pt * 1.2);
+    width: 100%;
+    margin-left: -28px;
+    text-align: center;
   }
 
   .header-icon {

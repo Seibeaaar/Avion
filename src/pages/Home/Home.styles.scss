@@ -29,7 +29,7 @@
   .featured-item {
     animation: appear 0.7s ease-out;
     width: 100%;
-    gap: 16px;
+    gap: 80px;
     @include mixins.row(center);
     flex-wrap: wrap;
     .featured-item--image {

@@ -8,7 +8,7 @@
   cursor: pointer;
   transition: all ease 0.3s;
   min-width: 170px;
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 576px) {
     width: 100%;
   }
 }
