@@ -12,6 +12,7 @@
     @include mixins.row;
     gap: 20px;
     align-items: stretch;
+    flex-wrap: wrap;
   }
   .qualities-item {
     width: calc(25% - 15px);
@@ -19,6 +20,9 @@
     margin-top: 36px;
     padding: 48px;
     justify-content: center;
+    @media screen and (max-width: 992px) {
+      width: 100%;
+    }
     .qualities-item--title {
       margin: 12px 0;
       @include mixins.text(20px);

@@ -3,15 +3,21 @@
 
 .footer {
   background-color: colors.$dark;
-  padding: 0 80px;
+  padding: 0 24pt;
   .footer-content {
     @include mixins.row;
+    flex-wrap: wrap;
     align-items: flex-start;
     padding: 50px 0 64px 0;
     .content-info {
       @include mixins.row(start);
       align-items: start;
       gap: 64px;
+      @media screen and (max-width: 992px) {
+        width: 100%;
+        @include mixins.row;
+        margin-bottom: 24px;
+      }
       .content-info--logo {
         @include mixins.text(36px, colors.$white);
         margin-bottom: 16px;
@@ -45,6 +51,11 @@
     @include mixins.row;
     align-items: start;
     gap: 110px;
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      @include mixins.row;
+      margin-bottom: 24px;
+    }
     .content-links--title {
       @include mixins.text(16px, colors.$white);
       margin-bottom: 16px;

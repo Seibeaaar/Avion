@@ -12,8 +12,14 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 992px) {
+      flex-basis: calc(50% - 15px);
+    }
+    @media screen and (max-width: 576px) {
+      flex-basis: 100%;
+    }
     .product-item--image {
-      height: 275px;
+      min-height: 275px;
       width: 100%;
       margin-bottom: 24px;
     }

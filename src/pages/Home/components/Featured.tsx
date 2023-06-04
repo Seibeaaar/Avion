@@ -3,6 +3,8 @@ import { Skeleton } from "antd";
 
 import "../Home.styles.scss";
 import { Product } from "src/types/products";
+import Button from "src/components/Button";
+import { useNavigate } from "react-router-dom";
 
 interface IFeaturedProductprops {
   featured: Product;
@@ -13,6 +15,9 @@ const FeaturedProduct: React.FC<IFeaturedProductprops> = ({
   featured,
   loading,
 }) => {
+  const navigate = useNavigate();
+  const goToFeaturedProduct = () =>
+    navigate(`/product/${featured.title}/${featured.id}`);
   return (
     <section className="featured">
       {loading || !featured ? (
@@ -33,6 +38,13 @@ const FeaturedProduct: React.FC<IFeaturedProductprops> = ({
               <p className="featured-item--description">
                 {featured?.description}
               </p>
+            </div>
+            <div className="featured-button">
+              <Button
+                onClick={goToFeaturedProduct}
+                text="View product"
+                variant="white"
+              />
             </div>
           </div>
         </div>

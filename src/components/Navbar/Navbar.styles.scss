@@ -10,48 +10,58 @@
     @include mixins.row;
     width: 50%;
   }
+}
 
-  .navbar-item {
-    @include mixins.text(16pt, colors.$borderDark);
-    text-decoration: none;
-    position: relative;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.25s ease-out;
-    &::after {
-      content: " ";
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      transform-origin: bottom right;
-      transition: transform 0.25s ease-out;
-      background-color: colors.$primary;
-    }
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-    &:hover {
-      color: colors.$primary;
-    }
+.navbar-drawer--title {
+  @include mixins.text(24pt);
+  margin-bottom: 24px;
+}
+
+.navbar-item {
+  @include mixins.text(16pt, colors.$borderDark);
+  text-decoration: none;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  @media screen and (max-width: 1200px) {
+    display: block;
+    margin-top: 24px;
+    margin-left: 12px;
   }
-  .navbar-item--active {
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    background-color: colors.$primary;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  &:hover {
     color: colors.$primary;
-    &::after {
-      content: " ";
-      position: absolute;
-      width: 100%;
-      transform: scaleX(1);
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      transform-origin: bottom right;
-      transition: transform 0.25s ease-out;
-      background-color: colors.$primary;
-    }
+  }
+}
+.navbar-item--active {
+  color: colors.$primary;
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    background-color: colors.$primary;
   }
 }

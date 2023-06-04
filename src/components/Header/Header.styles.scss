@@ -14,6 +14,9 @@
 
   .header-icon {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .header-icon--svg {
       @extend %touchableIcon;
       width: 16px;

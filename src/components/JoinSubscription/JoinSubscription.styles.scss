@@ -10,6 +10,9 @@
   width: 100%;
   background-image: url("../../assets/images/JoinSubscription.webp");
   text-align: center;
+  @media screen and (max-width: 992px) {
+    padding: 80px 24pt;
+  }
   .subscription-title {
     @include mixins.text(32px, colors.$white);
     margin-bottom: 12px;
@@ -33,5 +36,13 @@
   .subscription-form {
     @include mixins.row(start);
     align-items: stretch;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+    .subscription-form--submit {
+      @media screen and (max-width: 768px) {
+        margin-top: 12px;
+      }
+    }
   }
 }

@@ -28,7 +28,9 @@ const JoinSubscription = () => (
       </div>
       <form className="subscription-form">
         <Input type="email" placeholder="Enter your e-mail" />
-        <Button variant="primary" text="Join now" />
+        <div className="subscription-form--submit">
+          <Button variant="primary" text="Join now" />
+        </div>
       </form>
     </AnimationOnScroll>
   </section>
