@@ -2,7 +2,7 @@
 @use "../../styles/colors";
 
 .product-row {
-  @include mixins.row(start);
+  @include mixins.row(flex-start);
   gap: 20px;
   flex-wrap: wrap;
   align-items: stretch;

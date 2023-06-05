@@ -10,7 +10,7 @@
     align-items: flex-start;
     padding: 50px 0 64px 0;
     .content-info {
-      @include mixins.row(start);
+      @include mixins.row(flex-start);
       align-items: start;
       gap: 64px;
       @media screen and (max-width: 992px) {

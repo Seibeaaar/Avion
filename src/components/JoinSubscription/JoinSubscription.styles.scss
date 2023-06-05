@@ -34,7 +34,7 @@
     }
   }
   .subscription-form {
-    @include mixins.row(start);
+    @include mixins.row(flex-start);
     align-items: stretch;
     @media screen and (max-width: 768px) {
       flex-direction: column;

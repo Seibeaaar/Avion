@@ -49,7 +49,7 @@
   }
 
   .header-actions {
-    @include mixins.row(start);
+    @include mixins.row(flex-start);
     gap: 16px;
   }
 }
