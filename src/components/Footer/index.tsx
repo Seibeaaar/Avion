@@ -7,7 +7,6 @@ import {
 import { Link } from "react-router-dom";
 import footerLinks from "src/constants/footerLinks";
 import "./Footer.styles.scss";
-import useWindowDimensions from "src/hooks/useWindowDimensions";
 
 const socialLinks = [
   {
@@ -25,7 +24,6 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const { width } = useWindowDimensions();
   return (
     <footer className="footer">
       <section className="footer-content">
